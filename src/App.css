@@ -36,3 +36,56 @@
     transform: rotate(360deg);
   }
 }
+
+.wrapper{
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+Footer{
+  margin-top: auto;
+}
+.products{
+  padding: 20px;
+  display: flex;
+  justify-content: baseline;
+  flex-wrap: wrap;
+}
+.product{
+  margin: 10px;
+  padding: 20px;
+  width: 632px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 25%);
+}
+.more__btn,
+.add__btn{
+  margin: 20px 0px;
+  
+}
+.more__btn{
+  margin-left: 20px;
+}
+.buttons{
+  display: flex;
+  margin-top: 10px;
+}
+.content{
+  display: flex;
+}
+
+.pagination a{cursor: pointer;}
+
+.carousel-item a{
+  text-decoration: none;
+  font-size: large;
+  font-weight: bold;
+  color: black;
+}
+.space{
+  height: 50px;
+}
+.carus{
+  height: 50px;
+}
