@@ -30,30 +30,36 @@ debugger
         e.preventDefault()
         dispatch(setCurrentPage(currentPage - 1))
     }
-    return (
-        <nav aria-label="Page navigation example">
-        <ul className="pagination justify-content-center">
-            {
-                currentPage > 1 ?
+    
+    if (countPages > 0) {
+        return (
+            <nav aria-label="Page navigation example">
+            <ul className="pagination justify-content-center">
+                {
+                    currentPage > 1 ?
+                    <li className="page-item">
+                        <a className="page-link" href="/" onClick={onPrevClick} tabindex="-1">Previous</a>
+                    </li>
+                    :
+                    <li className="page-item disabled">
+                        <a className="page-link" href="#" onClick={onPrevClick} tabindex="-1">Previous</a>
+                    </li>
+                }
+                {
+                    pages.map((page) => (
+                        <li onClick={() => onPageClick(page)} className="page-item"><a className="page-link" href="#">{page}</a></li>
+                    ))
+                }
                 <li className="page-item">
-                    <a className="page-link" href="/" onClick={onPrevClick} tabindex="-1">Previous</a>
+                <a className="page-link" href='#' onClick={onNextClick}>Next</a>
                 </li>
-                :
-                <li className="page-item disabled">
-                    <a className="page-link" href="#" onClick={onPrevClick} tabindex="-1">Previous</a>
-                </li>
-            }
-            {
-                pages.map((page) => (
-                    <li onClick={() => onPageClick(page)} className="page-item"><a className="page-link" href="#">{page}</a></li>
-                ))
-            }
-            <li className="page-item">
-            <a className="page-link" href='#' onClick={onNextClick}>Next</a>
-            </li>
-        </ul>
-        </nav>
-    )
+            </ul>
+            </nav>
+        )
+    }
+    else{
+        return <div></div>
+    }
 }
 
 export default Pagination

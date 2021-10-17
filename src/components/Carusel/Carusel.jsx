@@ -6,7 +6,7 @@ const Carusel = () => {
             <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <Link to='/'>Новинки этого года... </Link>
+                    <Link to={`/advetirsment/${"news"}`}>Новинки этого года... </Link>
                 </div>
                 <div className="carousel-item">
                     <div className='space'>
@@ -14,7 +14,7 @@ const Carusel = () => {
                     </div>
                 </div>
                 <div className="carousel-item ">
-                    <Link to='/'>Получи карту магазина бесплатно...</Link> 
+                    <Link to={`/advetirsment/${"shopCard"}`}>Получи карту магазина бесплатно...</Link> 
                 </div>
                 <div className="carousel-item">
                     <div>
@@ -22,7 +22,7 @@ const Carusel = () => {
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <Link to='/'>Узнай про бесплатную доставку товара...</Link> 
+                    <Link to={`/advetirsment/${"freeDelivery"}`}>Узнай про бесплатную доставку товара...</Link> 
                 </div>
                 <div className="carousel-item">
                     <div>

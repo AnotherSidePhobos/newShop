@@ -1,7 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom';
+import {addProductToCart} from './../../redux/actions/actions';
+
 
 const Product = ({product}) => {
+    const dispatch = useDispatch();
+
+    const onAddCartClick = () => {
+        debugger
+        dispatch(addProductToCart(product));
+    }
     return (
         <div>
             {
@@ -19,7 +28,7 @@ const Product = ({product}) => {
                     </div>
                     <div className='buttons'>
                         <div>
-                            <button onClick={()=>alert('added to cart')} className='btn btn-success add__btn'>add to cart</button>
+                            <button onClick={onAddCartClick} className='btn btn-success add__btn'>add to cart</button>
                         </div>
                         <div>
                             <Link to={`/detail/${product.id}`}>

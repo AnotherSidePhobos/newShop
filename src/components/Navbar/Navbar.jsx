@@ -1,8 +1,22 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {BsCartFill} from 'react-icons/bs';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+
+    const cartItems = useSelector(state => state.carts.cartITems)
+
+    debugger
+
+    let commonCount = () => {
+        let comAm = 0;
+        cartItems.map((item) => (
+            comAm += item.count
+        ))
+        return comAm;
+    }
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className='container'>
@@ -22,7 +36,7 @@ const Navbar = () => {
                         <Link className="nav-link" to="/contacts">Contacts</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/cart"><BsCartFill/></Link>
+                        <Link className="nav-link" to="/cart"><BsCartFill/><span className='cart__items-length'>{commonCount() > 0 ? commonCount() : ""}</span></Link>
                     </li>
                     </ul>
                 </div>

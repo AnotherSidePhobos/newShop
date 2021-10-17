@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import Cart from './components/Cart/Cart';
 import Contacts from './components/Contacts/Contacts';
 import About from './components/About/About';
+import Advetirsment from './components/Advetirsment/Advetirsment';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Switch>
               <Route path='/' exact component={Products}/>
               <Route path='/detail/:id' component={Detail}/>
+              <Route path='/advetirsment/:par' component={Advetirsment}/>
               <Route path='/cart' component={Cart}/>
               <Route path='/about' component={About}/>
               <Route path='/contacts' component={Contacts}/>

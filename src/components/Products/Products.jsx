@@ -6,6 +6,7 @@ import {getTotalCountApi} from './../../api/api';
 import { useDispatch, useSelector } from 'react-redux';
 import {fetchAllProducts} from './../../redux/actions/actions';
 import {getTotalCount} from './../../redux/actions/actions';
+import {setAllProducts} from './../../redux/actions/actions';
 import Pagination from '../Pagination/Pagination';
 import Carusel from '../Carusel/Carusel';
 
@@ -19,11 +20,17 @@ const Products = (props) => {
     const products = useSelector(state => state.products.productsArr)
     debugger
     useEffect(() => {
+        debugger
         getTotalCountApi()
         .then((response) => dispatch(getTotalCount(response.length)))
         fetchAllProductsApi(currentPage, pageSize)
         .then((responce) => dispatch(fetchAllProducts(responce)))
+
+        //all products to know amount
+        getTotalCountApi()
+        .then((responce) => dispatch(setAllProducts(responce)))
         
+
     }, [currentPage])
     
 
@@ -40,6 +47,7 @@ const Products = (props) => {
                     }
                 </div>
             </div>
+            
             <Pagination/>
         </>
     )
